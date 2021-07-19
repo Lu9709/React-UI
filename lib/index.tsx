@@ -1,5 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './button';
+import Icon from './icon';
 
-ReactDOM.render(<Button/>,document.body)
+ReactDOM.render(<div>
+  <Icon name="react"/>
+  <Icon name="github"/>
+  <Icon name="vue"/>
+</div>, document.querySelector('#root'));
