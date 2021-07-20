@@ -1,36 +1,56 @@
-import * as React from 'react';
+import React from 'react';
 import {scopedClassMarker} from '../classes';
-import './dialog.scss'
+import './dialog.scss';
 import {Icon} from '../index';
+import {ReactElement} from 'react';
+
 interface Props {
   visible: boolean
+  buttons?: Array<ReactElement>
+  onClose: React.MouseEventHandler;
+  closeOnClickMask?: boolean
 }
 
-const scopedClass = scopedClassMarker('react-ui-dialog')
-const sc = scopedClass
+const scopedClass = scopedClassMarker('react-ui-dialog');
+const sc = scopedClass;
+
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
+  const onClickClose: React.MouseEventHandler = (e) => {
+    props.onClose(e);
+  };
+  const onClickMask: React.MouseEventHandler = (e) => {
+    if (props.closeOnClickMask) {
+      props.onClose(e);
+    }
+  };
   return (
     props.visible ?
-      <div>
-        <React.Fragment>
-          <div className={sc('mask')}/>
-          <div className={sc()}>
-            <div className={sc('close')}>
-              <Icon name="close"/>
-            </div>
-            <header className={sc('header')}>hi</header>
-            <main className={sc('main')}>{props.children}</main>
-            <footer className={sc('footer')}>
-              <button>ok</button>
-              <button>cancel</button>
-            </footer>
+      <React.Fragment>
+        <div className={sc('mask')} onClick={onClickMask}/>
+        <div className={sc()}>
+          <div className={sc('close')} onClick={onClickClose}>
+            <Icon name="close"/>
           </div>
-
-        </React.Fragment>
-
-      </div>
+          <header className={sc('header')}>
+            提示
+          </header>
+          <main className={sc('main')}>
+            {props.children}
+          </main>
+          <footer className={sc('footer')}>
+            {props.buttons && props.buttons.map((button, index) =>
+              React.cloneElement(button, {key: index})
+            )}
+          </footer>
+        </div>
+      </React.Fragment>
       : null
   );
 };
+
+Dialog.defaultProps = {
+  closeOnClickMask: false
+};
+
 export default Dialog;
