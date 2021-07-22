@@ -5,7 +5,7 @@ const fn: React.MouseEventHandler = (e) => {
   console.log(e.target);
 };
 
-const IconExample:React.FunctionComponent = ()=>{
+const IconExample1:React.FunctionComponent = ()=>{
   return(
     <div>
       <Icon name="react"
@@ -20,4 +20,4 @@ const IconExample:React.FunctionComponent = ()=>{
     </div>
   )
 }
-export default IconExample
+export default IconExample1
