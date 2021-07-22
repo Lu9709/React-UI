@@ -1,5 +1,5 @@
 import React, {ReactNode, ReactElement} from 'react';
-import {scopedClassMarker} from '../classes';
+import {scopedClassMaker} from '../helpers/classes';
 import './dialog.scss';
 import {Icon} from '../index';
 import ReactDOM from 'react-dom';
@@ -11,7 +11,7 @@ interface Props {
   closeOnClickMask?: boolean
 }
 
-const scopedClass = scopedClassMarker('react-ui-dialog');
+const scopedClass = scopedClassMaker('react-ui-dialog');
 const sc = scopedClass;
 
 

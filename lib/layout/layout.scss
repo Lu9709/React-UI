@@ -1,0 +1,27 @@
+@import '../helper';
+
+.react-ui-layout{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  &-hasAside {
+    display: flex;
+    flex-direction: row;
+
+  }
+  &-content {
+    flex-grow: 1;
+    background: grey;
+  }
+  &-head {
+    background: yellowgreen;
+  }
+  &-footer {
+    background: rebeccapurple;
+  }
+
+  & & {
+    flex-grow: 1;
+    flex-direction: row;
+  }
+}

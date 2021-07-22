@@ -21,12 +21,13 @@
   },
   "homepage": "https://github.com/Lu9709/React-UI#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
-    "@types/react-test-renderer": "^17.0.1",
-    "@types/jest": "^26.0.24",
     "@types/react-router-dom": "^5.1.8",
+    "@types/react-test-renderer": "^17.0.1",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-preset-react-app": "^10.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.1.0",
     "html-webpack-plugin": "^5.3.2",
@@ -40,7 +41,8 @@
     "typescript": "^3.3.5",
     "webpack": "^5.45.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "babel-jest": "^27.0.6"
   },
   "dependencies": {
 
